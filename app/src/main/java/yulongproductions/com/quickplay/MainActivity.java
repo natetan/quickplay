@@ -41,9 +41,10 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void startApp(String username, String password) {
-        Intent intent = new Intent();
-        intent.putExtra("username", username);
-        intent.putExtra("password", password);
+        Intent intent = new Intent(MainActivity.this, FindGameActivity.class);
+        intent.putExtra(getString(R.string.username), username);
+        intent.putExtra(getString(R.string.password), password);
+        startActivity(intent);
     }
 
     private String convert(EditText e) {
