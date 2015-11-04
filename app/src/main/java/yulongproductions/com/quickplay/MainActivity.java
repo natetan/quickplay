@@ -36,7 +36,11 @@ public class MainActivity extends ActionBarActivity {
         this.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startApp(username, password);
+                if (username == null || username.equals("") || password == null || password.equals("")) {
+                    alertUserAboutError();
+                } else {
+                    startApp(username, password);
+                }
             }
         });
     }
