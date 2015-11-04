@@ -1,5 +1,6 @@
 package yulongproductions.com.quickplay;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -49,5 +50,10 @@ public class MainActivity extends ActionBarActivity {
 
     private String convert(EditText e) {
         return e.getText().toString();
+    }
+
+    private void alertUserAboutError() {
+        AlertDialogFragment dialog = new AlertDialogFragment();
+        dialog.show(getFragmentManager(), "error_message");
     }
 }
