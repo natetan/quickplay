@@ -36,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
         this.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (username == null || username.equals("") || password == null || password.equals("")) {
+                if (isEmpty(username) || isEmpty(password)) {
                     alertUserAboutError();
                 } else {
                     startApp(username, password);
@@ -59,5 +59,9 @@ public class MainActivity extends ActionBarActivity {
     private void alertUserAboutError() {
         AlertDialogFragment dialog = new AlertDialogFragment();
         dialog.show(getFragmentManager(), "error_message");
+    }
+
+    private boolean isEmpty(String field) {
+        return field == null || field.equals("");
     }
 }
