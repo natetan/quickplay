@@ -6,4 +6,7 @@
     <string name="title_activity_find_game">FindGameActivity</string>
     <string name="username">username</string>
     <string name="password">password</string>
+    <string name="title_activity_list_segment">ListSegment</string>
+    <string name="title_activity_class_segment">ClassSegment</string>
+    <string name="title_activity_profile_segment">ProfileSegment</string>
 </resources>

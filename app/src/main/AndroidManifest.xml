@@ -24,6 +24,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="yulongproductions.com.quickplay.MainActivity" />
         </activity>
+        <activity
+            android:name=".ListSegment"
+            android:label="@string/title_activity_list_segment"
+            android:parentActivityName=".FindGameActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="yulongproductions.com.quickplay.FindGameActivity" />
+        </activity>
+        <activity
+            android:name=".ClassSegment"
+            android:label="@string/title_activity_class_segment"
+            android:parentActivityName=".FindGameActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="yulongproductions.com.quickplay.FindGameActivity" />
+        </activity>
+        <activity
+            android:name=".ProfileSegment"
+            android:label="@string/title_activity_profile_segment"
+            android:parentActivityName=".FindGameActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="yulongproductions.com.quickplay.FindGameActivity" />
+        </activity>
     </application>
 
 </manifest>
