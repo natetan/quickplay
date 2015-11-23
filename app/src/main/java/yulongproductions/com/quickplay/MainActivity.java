@@ -14,8 +14,8 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends ActionBarActivity {
 
-    private EditText username;
-    private EditText password;
+    private EditText mNameText;
+    private EditText mPassword;
     private Button loginButton;
     private GlobalFunctions mGlobalFunctions;
 
@@ -24,18 +24,19 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.username = (EditText) findViewById(R.id.nameEditText);
-        this.password = (EditText) findViewById(R.id.passwordEditText);
+        this.mNameText = (EditText) findViewById(R.id.nameEditText);
+        this.mPassword = (EditText) findViewById(R.id.passwordEditText);
         this.loginButton = (Button) findViewById(R.id.loginButton);
         this.mGlobalFunctions = new GlobalFunctions(this);
         this.mGlobalFunctions.setupUI(findViewById(R.id.mainLayout));
 
-        final String username = this.convert(this.username);
-        final String password = this.convert(this.username);
+
 
         this.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String username = convert(mNameText);
+                String password = convert(mPassword);
                 if (isEmpty(username) || isEmpty(password)) {
                     alertUserAboutError();
                 } else {
