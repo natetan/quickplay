@@ -1,44 +1,68 @@
 package yulongproductions.com.quickplay;
 
-import android.app.ListActivity;
-import android.app.TabActivity;
+
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.TabHost;
+
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 
 public class FindGameActivity extends ActionBarActivity {
+
+    private ImageView mImageView;
+    private Button listButton;
+    private Button createButton;
+    private Button profileButton;
+    private String mUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_game);
+        getSupportActionBar().hide();
 
-        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+        Intent intent = getIntent();
+        mUserName = intent.getStringExtra(getString(R.string.username));
 
-        TabHost.TabSpec tab1 = tabHost.newTabSpec("First Tab");
-        TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
-        TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
+        listButton = (Button) findViewById(R.id.gameListButton);
+        createButton = (Button) findViewById(R.id.createButton);
+        profileButton = (Button) findViewById(R.id.profileButton);
+        mImageView = (ImageView) findViewById(R.id.mainImage);
 
-        // Set the Tab name and Activity
-        // that will be opened when particular Tab will be selected
-        tab1.setIndicator("Games");
-        tab1.setContent(new Intent(this,ListSegment.class));
+        listButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mImageView.setImageDrawable(getImage(R.drawable.games_list));
+            }
+        });
 
-        tab2.setIndicator("Create");
-        tab2.setContent(new Intent(this,CreateSegment.class));
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mImageView.setImageDrawable(getImage(R.drawable.create_game));
+            }
+        });
 
-        tab3.setIndicator("Profile");
-        tab3.setContent(new Intent(this,ProfileSegment.class));
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getProfile(mUserName);
+            }
+        });
+    }
 
-        /** Add the tabs  to the TabHost to display. */
-        tabHost.addTab(tab1);
-        tabHost.addTab(tab2);
-        tabHost.addTab(tab3);
+    private void getProfile(String name) {
+        Intent intent = new Intent(FindGameActivity.this, ProfileSegment.class);
+        intent.putExtra(getString(R.string.username), name);
+        startActivity(intent);
+    }
 
+    private Drawable getImage(int imageId) {
+        return getResources().getDrawable(imageId);
     }
 }
