@@ -19,7 +19,8 @@
         android:hint="uwnetid"
         android:textColorHint="#FFD700"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFD700"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -32,7 +33,8 @@
         android:layout_marginTop="27dp"
         android:layout_below="@+id/nameEditText"
         android:layout_alignLeft="@+id/nameEditText"
-        android:layout_alignStart="@+id/nameEditText"/>
+        android:layout_alignStart="@+id/nameEditText"
+        android:textColor="#FFD700"/>
 
     <TextView
         android:layout_width="wrap_content"
