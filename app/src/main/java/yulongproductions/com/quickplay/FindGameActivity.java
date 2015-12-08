@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TabHost;
 
 
-public class FindGameActivity extends TabActivity {
+public class FindGameActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
