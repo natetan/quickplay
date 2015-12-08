@@ -11,7 +11,7 @@ public class CreateSegment extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_class_segment);
+        setContentView(R.layout.activity_create_segment);
     }
 
     @Override
